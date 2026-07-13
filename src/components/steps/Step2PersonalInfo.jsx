@@ -33,6 +33,14 @@ function getMinDOB() {
   return d.toISOString().split('T')[0];
 }
 
+// Format age display
+function getAgeLabel(age) {
+  if (!age || age < 0) return null;
+  if (age < 21) return { text: `Age: ${age} years (minimum 21 required)`, color: 'text-error' };
+  if (age > 65) return { text: `Age: ${age} years (maximum 65 allowed)`, color: 'text-error' };
+  return { text: `Age: ${age} years ✓`, color: 'text-accent' };
+}
+
 export default function Step2PersonalInfo({ onNext, onPrev }) {
   const { formData, updateStepData, completeStep } = useFormStore();
   const saved = formData.step2;
@@ -61,6 +69,7 @@ export default function Step2PersonalInfo({ onNext, onPrev }) {
 
   const dob = watch('dateOfBirth');
   const age = dob ? calculateAge(dob) : null;
+  const ageLabel = getAgeLabel(age);
 
   const onSubmit = (data) => {
     updateStepData(2, data);
@@ -91,7 +100,7 @@ export default function Step2PersonalInfo({ onNext, onPrev }) {
 
         {/* Date of Birth */}
         <Input label="Date of Birth" id="dateOfBirth" required error={errors.dateOfBirth?.message}
-          helpText={age ? `Age: ${age} years` : 'Must be between 21–65 years'}>
+          helpText={ageLabel ? undefined : 'Must be between 21–65 years'}>
           <InputField
             id="dateOfBirth"
             type="date"
@@ -102,6 +111,11 @@ export default function Step2PersonalInfo({ onNext, onPrev }) {
             error={errors.dateOfBirth?.message}
             {...register('dateOfBirth')}
           />
+          {ageLabel && (
+            <p className={`mt-1 text-xs font-medium ${ageLabel.color}`} aria-live="polite">
+              {ageLabel.text}
+            </p>
+          )}
         </Input>
 
         {/* Gender */}
