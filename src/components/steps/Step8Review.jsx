@@ -208,12 +208,14 @@ export default function Step8Review({ onPrev }) {
             </div>
           </div>
           {affordability && !affordability.affordable && (
-            <div className="mt-3 bg-warning/20 border border-warning/40 rounded-lg p-2" role="alert">
+            <div className="mt-3 bg-warning/20 border border-warning/40 rounded-lg p-2" role="alert" aria-live="assertive">
               <p className="text-xs text-warning font-medium">⚠️ {affordability.warning}</p>
             </div>
           )}
           {affordability?.affordable && primaryIncome > 0 && (
-            <p className="text-xs opacity-70 mt-2">EMI-to-Income Ratio: {affordability.ratio}% ✓</p>
+            <p className="text-xs opacity-70 mt-2" aria-live="polite">
+              EMI-to-Income Ratio: {affordability.ratio}% ✓ Within 50% limit
+            </p>
           )}
         </div>
       )}
