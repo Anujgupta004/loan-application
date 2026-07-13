@@ -1,0 +1,38 @@
+{
+  "step1": {
+    "loanType": "business",
+    "loanAmount": "2500000",
+    "loanTenure": "60",
+    "loanPurpose": "Business Expansion"
+  },
+  "step2": {
+    "fullName": "Amit Singh",
+    "dateOfBirth": "1982-03-10",
+    "gender": "male",
+    "maritalStatus": "married",
+    "fatherName": "Harpal Singh",
+    "motherName": "Gurpreet Singh",
+    "email": "amit.singh@techcorp.in",
+    "mobile": "7654321098"
+  },
+  "step3": {
+    "pan": "ABCPE1234F",
+    "aadhaar": "499118665246"
+  },
+  "step4": {
+    "line1": "Plot 45, Industrial Area Phase 2",
+    "pinCode": "160001",
+    "residenceType": "owned",
+    "years": "8"
+  },
+  "step5": {
+    "employmentType": "business_owner",
+    "businessName": "Tech Solutions LLP",
+    "businessType": "LLP",
+    "turnover": "12000000",
+    "income": "200000",
+    "years": "8",
+    "gst": "03ABCPE1234F1Z5",
+    "experience": "10"
+  }
+}

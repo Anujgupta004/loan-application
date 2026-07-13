@@ -1,0 +1,42 @@
+{
+  "step1": {
+    "loanType": "home",
+    "loanAmount": "5000000",
+    "loanTenure": "240",
+    "loanPurpose": "Purchase of New Home"
+  },
+  "step2": {
+    "fullName": "Priya Mehta",
+    "dateOfBirth": "1985-08-22",
+    "gender": "female",
+    "maritalStatus": "married",
+    "fatherName": "Rajesh Mehta",
+    "motherName": "Kavita Mehta",
+    "email": "priya.mehta@example.com",
+    "mobile": "8765432109"
+  },
+  "step3": {
+    "pan": "ABCPE1234F",
+    "aadhaar": "499118665246"
+  },
+  "step4": {
+    "line1": "House 24, Sector 15, NOIDA",
+    "pinCode": "201301",
+    "residenceType": "rented",
+    "years": "3",
+    "rentAmount": "25000"
+  },
+  "step5": {
+    "employmentType": "salaried",
+    "company": "Infosys Limited",
+    "designation": "Senior Manager",
+    "salary": "150000",
+    "experience": "12"
+  },
+  "step6": {
+    "coApplicantName": "Vikram Mehta",
+    "relationship": "spouse",
+    "pan": "CDEPE5678G",
+    "income": "80000"
+  }
+}

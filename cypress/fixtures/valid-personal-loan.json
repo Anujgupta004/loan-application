@@ -1,0 +1,35 @@
+{
+  "step1": {
+    "loanType": "personal",
+    "loanAmount": "300000",
+    "loanTenure": "36",
+    "loanPurpose": "Medical Emergency"
+  },
+  "step2": {
+    "fullName": "Rahul Kumar Sharma",
+    "dateOfBirth": "1990-05-15",
+    "gender": "male",
+    "maritalStatus": "single",
+    "fatherName": "Suresh Kumar Sharma",
+    "motherName": "Sunita Sharma",
+    "email": "rahul.sharma@example.com",
+    "mobile": "9876543210"
+  },
+  "step3": {
+    "pan": "ABCPE1234F",
+    "aadhaar": "499118665246"
+  },
+  "step4": {
+    "line1": "Flat 301, Sunshine Apartments, MG Road",
+    "pinCode": "560001",
+    "residenceType": "owned",
+    "years": "5"
+  },
+  "step5": {
+    "employmentType": "salaried",
+    "company": "ABC Technologies Pvt Ltd",
+    "designation": "Software Engineer",
+    "salary": "75000",
+    "experience": "5"
+  }
+}
