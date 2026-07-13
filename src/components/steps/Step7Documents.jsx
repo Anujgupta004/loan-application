@@ -171,6 +171,8 @@ export default function Step7Documents({ onNext, onPrev }) {
   // Count uploaded vs required
   const requiredCount = requiredDocs.filter((d) => d.required).length + 1; // +1 for signature
   const uploadedCount = requiredDocs.filter((d) => d.required && documents[d.key]?.length > 0).length + (signature ? 1 : 0);
+  const allDone = uploadedCount === requiredCount;
+  const progressPercent = Math.round((uploadedCount / requiredCount) * 100);
 
   return (
     <div>
@@ -181,9 +183,26 @@ export default function Step7Documents({ onNext, onPrev }) {
         </div>
 
         {/* Progress */}
-        <div className="bg-primary/5 border border-primary/20 rounded-lg p-3 flex items-center justify-between">
-          <span className="text-sm text-primary font-medium">Document Checklist</span>
-          <span className="text-sm text-gray-600">{uploadedCount} / {requiredCount} completed</span>
+        <div className="bg-primary/5 border border-primary/20 rounded-lg p-3">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm text-primary font-medium">Document Checklist</span>
+            <span className={`text-sm font-semibold ${allDone ? 'text-accent' : 'text-gray-600'}`}>
+              {uploadedCount} / {requiredCount} completed
+            </span>
+          </div>
+          <div
+            className="w-full bg-gray-200 rounded-full h-1.5"
+            role="progressbar"
+            aria-valuenow={progressPercent}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label={`${uploadedCount} of ${requiredCount} documents uploaded`}
+          >
+            <div
+              className={`h-1.5 rounded-full transition-all duration-500 ${allDone ? 'bg-accent' : 'bg-primary'}`}
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
         </div>
 
         {/* Documents */}
