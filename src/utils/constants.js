@@ -101,6 +101,8 @@ export const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
 export const DRAFT_KEY_PREFIX = 'lendswift_draft_';
 export const DRAFT_TTL_HOURS = 72;
 export const AUTO_SAVE_INTERVAL = 30000; // 30 seconds
+export const VERIFICATION_DELAY_MS = 1500; // PAN/Aadhaar verification simulation
+export const PIN_LOOKUP_DELAY_MS = 600;   // PIN code lookup simulation
 
 export const STEP_LABELS = [
   'Loan Type',
