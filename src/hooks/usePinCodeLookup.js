@@ -13,11 +13,13 @@ export function usePinCodeLookup() {
     if (!pin || pin.length !== 6 || !/^\d{6}$/.test(pin)) {
       setResult(null);
       setError(null);
+      setIsLoading(false);
       return;
     }
 
     setIsLoading(true);
     setError(null);
+    setResult(null);
 
     // Simulate API delay
     setTimeout(() => {
