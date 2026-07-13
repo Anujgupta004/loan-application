@@ -17,6 +17,7 @@ import { decrypt } from '../utils/encryption';
  * @returns {{
  *   hasDraft: boolean,
  *   draft: object|null,
+ *   draftAge: string|null,  // e.g. "2.5 hours ago"
  *   restoreDraft: () => Promise<object|null>,
  *   discardDraft: () => void,
  * }}
@@ -30,6 +31,11 @@ export function useFormPersistence() {
       setDraft(found[0]);
     }
   }, []);
+
+  // Human-readable age of the draft
+  const draftAge = draft
+    ? `${draft.hoursDiff} hour${draft.hoursDiff !== 1 ? 's' : ''} ago`
+    : null;
 
   /**
    * Decrypt and return the saved form state.
@@ -68,6 +74,7 @@ export function useFormPersistence() {
   return {
     hasDraft: draft !== null,
     draft,
+    draftAge,
     restoreDraft,
     discardDraft,
   };
