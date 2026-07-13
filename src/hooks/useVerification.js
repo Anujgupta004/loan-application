@@ -17,7 +17,9 @@ export function useVerification(type, allowedEntityTypes = ['P']) {
 
   const verify = useCallback(
     (value) => {
-      if (!value || value === verifiedValue) return;
+      if (!value) return;
+      // Skip re-verification of already verified value
+      if (value === verifiedValue) return;
 
       // Cancel previous timer
       if (timerRef.current) clearTimeout(timerRef.current);
