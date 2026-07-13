@@ -135,7 +135,7 @@ export default function Wizard() {
 
         {/* Footer */}
         {!isSubmitted && (
-          <p className="text-center text-xs text-gray-400 mt-4">
+          <p className="text-center text-xs text-gray-400 mt-4" aria-live="polite">
             🔒 Your data is encrypted and secure. Auto-saved every 30 seconds.
           </p>
         )}
