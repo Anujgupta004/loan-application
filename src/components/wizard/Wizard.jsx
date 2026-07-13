@@ -139,6 +139,11 @@ export default function Wizard() {
             🔒 Your data is encrypted and secure. Auto-saved every 30 seconds.
           </p>
         )}
+        {isSubmitted && (
+          <p className="text-center text-xs text-accent mt-4 font-medium">
+            ✅ Application submitted successfully.
+          </p>
+        )}
       </div>
     </div>
   );
