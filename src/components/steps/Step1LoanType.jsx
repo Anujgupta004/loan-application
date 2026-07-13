@@ -160,18 +160,18 @@ export default function Step1LoanType({ onNext }) {
               />
             </Input>
 
-            {/* Info card */}
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
-              <h3 className="text-sm font-semibold text-primary mb-2">
-                {LOAN_TYPE_LABELS[watchedLoanType]} – Quick Overview
-              </h3>
-              <ul className="text-xs text-gray-600 space-y-1">
-                <li>• Amount Range: {limits?.label}</li>
-                <li>• Tenure: {tenureRange?.min}–{tenureRange?.max} months</li>
-                <li>• Interest Rate: {watchedLoanType === 'personal' ? '10.5%' : watchedLoanType === 'home' ? '8.5%' : '14%'} p.a.</li>
-                <li>• Processing Fee: 1% (min ₹2,000, max ₹25,000)</li>
-              </ul>
-            </div>
+        {/* Info card */}
+        <div className="bg-primary/5 border border-primary/20 rounded-lg p-4" role="note" aria-label={`${LOAN_TYPE_LABELS[watchedLoanType]} summary`}>
+          <h3 className="text-sm font-semibold text-primary mb-2">
+            {LOAN_TYPE_LABELS[watchedLoanType]} – Quick Overview
+          </h3>
+          <ul className="text-xs text-gray-600 space-y-1">
+            <li>• Amount Range: {limits?.label}</li>
+            <li>• Tenure: {tenureRange?.min}–{tenureRange?.max} months</li>
+            <li>• Interest Rate: {watchedLoanType === 'personal' ? '10.5%' : watchedLoanType === 'home' ? '8.5%' : '14%'} p.a. (Fixed)</li>
+            <li>• Processing Fee: 1% of loan amount (min ₹2,000 · max ₹25,000)</li>
+          </ul>
+        </div>
           </div>
         )}
       </div>
