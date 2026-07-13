@@ -122,8 +122,9 @@ export function FormProvider({ children }) {
     const loanAmount = Number(step1?.loanAmount) || 0;
 
     if (!loanType) return false;
+    // Home loan always requires co-applicant
     if (loanType === 'home') return true;
-
+    // Personal and Business loans based on amount threshold (strict >)
     const threshold = CO_APPLICANT_THRESHOLDS[loanType];
     return loanAmount > threshold;
   }, [state.formData.step1]);
@@ -131,7 +132,7 @@ export function FormProvider({ children }) {
   // Effective steps (skip Step 6 if not required)
   const getEffectiveSteps = useCallback(() => {
     if (isStep6Required()) return [1, 2, 3, 4, 5, 6, 7, 8];
-    return [1, 2, 3, 4, 5, 7, 8]; // skip 6
+    return [1, 2, 3, 4, 5, 7, 8]; // Step 6 conditionally skipped
   }, [isStep6Required]);
 
   const getNextStep = useCallback((current) => {
