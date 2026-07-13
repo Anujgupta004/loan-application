@@ -96,6 +96,9 @@ export default function Wizard() {
 
   if (!StepComponent) return null;
 
+  // Announce step change to screen readers
+  const { current: stepCurrent, total: stepTotal } = getStepProgress(currentStep);
+
   return (
     <div className="min-h-screen bg-gray-100 py-6 px-4">
       <div className="max-w-2xl mx-auto">
@@ -122,6 +125,7 @@ export default function Wizard() {
           ref={stepContentRef}
           className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 animate-fade-in"
           key={currentStep}
+          aria-label={`Step ${stepCurrent} of ${stepTotal}`}
         >
           <StepComponent
             onNext={handleNext}
