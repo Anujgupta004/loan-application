@@ -77,10 +77,11 @@ export default function Step6CoApplicant({ onNext, onPrev }) {
 
   // Reason why step 6 is required
   const getRequirementReason = () => {
-    if (loanType === 'home') return 'Co-applicant is mandatory for all Home Loans.';
     const amount = Number(formData.step1?.loanAmount?.replace(/,/g, '')) || 0;
-    if (loanType === 'personal') return `Co-applicant required for Personal Loans above ₹5,00,000 (your amount: ₹${amount.toLocaleString('en-IN')}).`;
-    if (loanType === 'business') return `Co-applicant required for Business Loans above ₹20,00,000 (your amount: ₹${amount.toLocaleString('en-IN')}).`;
+    const formattedAmount = amount.toLocaleString('en-IN');
+    if (loanType === 'home') return 'Co-applicant is mandatory for all Home Loans as per RBI guidelines.';
+    if (loanType === 'personal') return `Co-applicant required for Personal Loans above ₹5,00,000 (your amount: ₹${formattedAmount}).`;
+    if (loanType === 'business') return `Co-applicant required for Business Loans above ₹20,00,000 (your amount: ₹${formattedAmount}).`;
     return '';
   };
 
