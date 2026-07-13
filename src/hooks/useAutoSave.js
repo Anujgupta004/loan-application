@@ -101,13 +101,14 @@ export function findSavedDrafts() {
         const hoursDiff = (now - savedTime) / (1000 * 60 * 60);
 
         if (hoursDiff <= DRAFT_TTL_HOURS) {
-          drafts.push({ key, type, meta, encrypted, hoursDiff });
+          drafts.push({ key, type, meta, encrypted, hoursDiff: Math.round(hoursDiff * 10) / 10 });
         } else {
-          // Expired draft - clean up
+          // Expired draft - clean up silently
           localStorage.removeItem(key);
           localStorage.removeItem(metaKey);
         }
       } catch {
+        // Corrupted metadata - clean up
         localStorage.removeItem(key);
         localStorage.removeItem(metaKey);
       }
