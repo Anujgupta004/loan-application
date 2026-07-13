@@ -83,6 +83,10 @@ export default function FileUpload({
 
   const removeFile = (idx) => {
     const updated = value.filter((_, i) => i !== idx);
+    // Revoke the object URL of the removed file to free memory
+    if (value[idx]?.preview) {
+      try { URL.revokeObjectURL(value[idx].preview); } catch { /* ignore */ }
+    }
     onChange && onChange(updated);
     setCompressionInfo(null);
   };
