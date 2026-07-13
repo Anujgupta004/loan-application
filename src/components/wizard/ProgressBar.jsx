@@ -69,16 +69,10 @@ export default function ProgressBar() {
         />
       </div>
 
-      {/* Mobile step info */}
-      <div className="flex md:hidden items-center justify-between mt-2">
-        <span className="text-xs text-gray-500">
-          Step {currentIdx + 1} of {effectiveSteps.length}
-        </span>
-        <span className="text-xs font-medium text-primary">
-          {STEP_LABELS[currentStep - 1]}
-        </span>
-        <span className="text-xs text-gray-500">{progressPercent}%</span>
-      </div>
+      {/* Mobile */}
+      <p className="text-center text-xs text-gray-400 mt-3 md:hidden">
+        Step {currentIdx + 1} of {effectiveSteps.length} — {STEP_LABELS[currentStep - 1]}
+      </p>
     </div>
   );
 }
