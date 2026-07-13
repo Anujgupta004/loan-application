@@ -9,6 +9,13 @@ export const INTEREST_RATES = {
   business: 14.0,
 };
 
+// Rate labels for display
+export const INTEREST_RATE_LABELS = {
+  personal: '10.5% p.a. (Fixed)',
+  home: '8.5% p.a. (Fixed)',
+  business: '14.0% p.a. (Fixed)',
+};
+
 export const PROCESSING_FEE_PERCENT = 1; // 1%
 export const PROCESSING_FEE_MIN = 2000;  // ₹2,000
 export const PROCESSING_FEE_MAX = 25000; // ₹25,000
