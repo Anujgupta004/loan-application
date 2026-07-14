@@ -62,7 +62,6 @@ export default function Step3KYC({ onNext, onPrev }) {
   const { formData, updateStepData, completeStep } = useFormStore();
   const saved = formData.step3;
   const loanType = formData.step1?.loanType || 'personal';
-
   const [showPAN, setShowPAN] = useState(false);
   const [showAadhaar, setShowAadhaar] = useState(false);
 
@@ -210,7 +209,7 @@ export default function Step3KYC({ onNext, onPrev }) {
             />
           </Input>
 
-          {(loanType === 'home') && (
+          {(loanType === 'home' && Number(String(formData.step1?.loanAmount || '0').replace(/,/g, '')) > 5000000) && (
             <Input label="Passport Number" id="passportNumber" error={errors.passportNumber?.message}
               helpText="Format: 1 letter + 7 digits (e.g., A1234567)">
               <InputField

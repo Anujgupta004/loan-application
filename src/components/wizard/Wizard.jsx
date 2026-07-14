@@ -1,15 +1,17 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, lazy, Suspense } from 'react';
 import { useFormStore } from '../../store/formStore';
 import { useAutoSave } from '../../hooks/useAutoSave';
 import ProgressBar from './ProgressBar';
-import Step1LoanType from '../steps/Step1LoanType';
-import Step2PersonalInfo from '../steps/Step2PersonalInfo';
-import Step3KYC from '../steps/Step3KYC';
-import Step4Address from '../steps/Step4Address';
-import Step5Employment from '../steps/Step5Employment';
-import Step6CoApplicant from '../steps/Step6CoApplicant';
-import Step7Documents from '../steps/Step7Documents';
-import Step8Review from '../steps/Step8Review';
+
+// Lazy-load step components to reduce initial bundle size
+const Step1LoanType = lazy(() => import('../steps/Step1LoanType'));
+const Step2PersonalInfo = lazy(() => import('../steps/Step2PersonalInfo'));
+const Step3KYC = lazy(() => import('../steps/Step3KYC'));
+const Step4Address = lazy(() => import('../steps/Step4Address'));
+const Step5Employment = lazy(() => import('../steps/Step5Employment'));
+const Step6CoApplicant = lazy(() => import('../steps/Step6CoApplicant'));
+const Step7Documents = lazy(() => import('../steps/Step7Documents'));
+const Step8Review = lazy(() => import('../steps/Step8Review'));
 
 const STEP_COMPONENTS = {
   1: Step1LoanType,
@@ -127,10 +129,17 @@ export default function Wizard() {
           key={currentStep}
           aria-label={`Step ${stepCurrent} of ${stepTotal}`}
         >
-          <StepComponent
-            onNext={handleNext}
-            onPrev={handlePrev}
-          />
+          <Suspense fallback={
+            <div className="flex items-center justify-center py-16" aria-label="Loading step...">
+              <span className="spinner" aria-hidden="true" />
+              <span className="sr-only">Loading...</span>
+            </div>
+          }>
+            <StepComponent
+              onNext={handleNext}
+              onPrev={handlePrev}
+            />
+          </Suspense>
         </div>
 
         {/* Footer */}
