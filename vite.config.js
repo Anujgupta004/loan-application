@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/loan-application/',
+  // base path: '/' for Vercel, '/loan-application/' for GitHub Pages
+  base: process.env.GITHUB_PAGES ? '/loan-application/' : '/',
   plugins: [
     react(),
     tailwindcss(),
