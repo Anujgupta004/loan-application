@@ -14,16 +14,34 @@ A production-grade, 8-step multi-step loan application form built for LendSwift,
 
 ---
 
+## Screenshots
+
+| Step | Description |
+|------|-------------|
+| Step 1 | Loan Type & Amount selection with dynamic fields |
+| Step 2 | Personal Information with DOB age validation |
+| Step 3 | KYC — PAN + Aadhaar verification with badges |
+| Step 4 | Address with PIN code auto-fill |
+| Step 5 | Employment with 3 sub-forms |
+| Step 6 | Co-Applicant (conditional) |
+| Step 7 | Document upload + E-Signature canvas |
+| Step 8 | Review + Pre-Approval Summary + Submit |
+
+> Screenshots available at: **https://anujgupta004.github.io/loan-application/**
+
+---
+
 ## Setup & Installation
 
 ```bash
 npm install
-npm run dev          # Development server
+npm run dev          # Development server → http://localhost:5173
 npm run build        # Production build
 npm run preview      # Preview production build
-npm run test:e2e     # Run all 56 Cypress E2E tests (requires dev server)
+npm run test:e2e     # Run all 61 Cypress E2E tests (requires dev server)
 npm run test:e2e:open # Open Cypress interactive runner
 npm run lint         # ESLint with Airbnb config
+npm run deploy       # Deploy to GitHub Pages
 ```
 
 ---
