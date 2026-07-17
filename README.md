@@ -8,7 +8,9 @@ A production-grade, 8-step multi-step loan application form built for LendSwift,
 
 ## Live Demo
 
-🌐 **https://anujgupta004.github.io/loan-application/**
+🌐 **Vercel (Primary):** https://loan-application-anujgupta004s-projects.vercel.app
+
+🌐 **GitHub Pages:** https://anujgupta004.github.io/loan-application/
 
 > Or run locally: `npm run dev` → http://localhost:5173
 

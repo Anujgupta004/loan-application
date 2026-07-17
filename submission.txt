@@ -1,0 +1,54 @@
+========================================
+LENDSWIFT - LOAN APPLICATION FORM
+Zetheta Algorithms - Front End Developer Assessment
+========================================
+
+GITHUB REPOSITORY:
+https://github.com/Anujgupta004/loan-application
+
+LIVE URL (GitHub Pages):
+https://anujgupta004.github.io/loan-application/
+
+========================================
+PROJECT SUMMARY
+========================================
+
+Tech Stack:
+- React 19 + Vite 8
+- React Hook Form 7 (uncontrolled inputs)
+- Zod 4 (schema validation)
+- Tailwind CSS v4
+- Cypress 15 (E2E testing)
+- Web Crypto API (AES-256-GCM encryption)
+
+Key Features Implemented:
+✅ 8-step multi-step wizard form
+✅ 3 loan types: Personal, Home, Business
+✅ 14 cross-step validation rules
+✅ PAN validation (entity type check)
+✅ Aadhaar Verhoeff checksum algorithm
+✅ Auto-save every 30s with AES-256-GCM encryption
+✅ Resume modal with focus trap
+✅ Document upload with Canvas compression
+✅ E-signature capture (IT Act 2000 Section 3A)
+✅ Pre-approval EMI summary
+✅ RBI Digital Lending Guidelines compliance
+✅ WCAG 2.1 AA accessibility
+✅ Browser back button handling
+✅ React.lazy + Suspense lazy loading
+
+Testing:
+✅ 61 E2E tests passing (14 spec files)
+✅ All P0 tests passing
+✅ cypress-axe accessibility audit
+✅ Stress tests passing
+
+Git:
+✅ 45+ commits (Conventional Commits format)
+✅ 11 feature branches
+✅ ESLint Airbnb config
+
+Performance:
+✅ Main bundle: 71KB gzipped (< 300KB requirement)
+✅ Step components lazy-loaded separately
+========================================
