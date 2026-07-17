@@ -32,6 +32,7 @@ export default function Wizard() {
     getNextStep,
     getPrevStep,
     isSubmitted,
+    getStepProgress,
   } = useFormStore();
 
   const stepContentRef = useRef(null);

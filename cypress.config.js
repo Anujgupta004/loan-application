@@ -10,5 +10,14 @@ export default defineConfig({
     video: false,
     screenshotOnRunFailure: true,
     defaultCommandTimeout: 8000,
+    setupNodeEvents(on) {
+      on('task', {
+        log(message) {
+          // eslint-disable-next-line no-console
+          console.log(message);
+          return null;
+        },
+      });
+    },
   },
 });
