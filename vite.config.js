@@ -2,10 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// https://vite.dev/config/
 export default defineConfig({
-  // base path: '/' for Vercel, '/loan-application/' for GitHub Pages
-  base: process.env.GITHUB_PAGES ? '/loan-application/' : '/',
+  // '/loan-application/' for GitHub Pages, '/' for Vercel
+  base: process.env.VITE_BASE_PATH || '/',
   plugins: [
     react(),
     tailwindcss(),
