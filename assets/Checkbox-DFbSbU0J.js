@@ -1,4 +1,4 @@
-import{d as e,p as t,r as n}from"./index-C8X_QgyD.js";var r=t(e(),1),i=n(),a=(0,r.forwardRef)(function({label:e,error:t,id:n,required:r,helpText:a,className:o=``,...s},c){return(0,i.jsxs)(`div`,{className:`${o}`,children:[(0,i.jsxs)(`div`,{className:`flex items-start gap-3`,children:[(0,i.jsx)(`input`,{ref:c,type:`checkbox`,id:n,"aria-invalid":t?`true`:`false`,"aria-describedby":t?`${n}-error`:void 0,className:`
+import{d as e,p as t,r as n}from"./index-BiZ125nw.js";var r=t(e(),1),i=n(),a=(0,r.forwardRef)(function({label:e,error:t,id:n,required:r,helpText:a,className:o=``,...s},c){return(0,i.jsxs)(`div`,{className:`${o}`,children:[(0,i.jsxs)(`div`,{className:`flex items-start gap-3`,children:[(0,i.jsx)(`input`,{ref:c,type:`checkbox`,id:n,"aria-invalid":t?`true`:`false`,"aria-describedby":t?`${n}-error`:void 0,className:`
             mt-0.5 w-4 h-4 rounded border-gray-300 text-primary
             focus:ring-2 focus:ring-primary/50 cursor-pointer flex-shrink-0
             ${t?`border-error`:``}
